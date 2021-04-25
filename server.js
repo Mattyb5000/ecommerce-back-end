@@ -6,6 +6,11 @@ const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// const Book = require('./models/Book');
+// const Product = require('./models/Product');
+// const ProductTag = require('./models/ProductTag');
+// const Tag = require('./models/Tag');
+
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
@@ -14,7 +19,7 @@ app.use(express.urlencoded({
 app.use(routes);
 
 // sync sequelize models to the database, then turn on the server
-sequelize.sync().then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}!`);
   });
