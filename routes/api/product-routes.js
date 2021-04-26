@@ -149,24 +149,7 @@ router.delete('/:id', async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
-  // Product.destroy({
-  //     where: {
-  //       id: req.params.id,
-  //     },
-  //   })
-    // .then((productData) => {
-    //   if (!productData) {
-    //     res.status(404).json({
-    //       message: 'No product found with this id!'
-    //     });
-    //     return;
-    //   };
-    //   res.json(productData);
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    //   res.status(500).json(err);
-    // });
+ 
 });
 
 module.exports = router;
